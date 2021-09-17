@@ -1,21 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, ScrollView } from 'react-native';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>SOMOS FODAS, </Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+import { Login } from './src/components/auth/Login';
+
+export default function App() { 
+   return (
+     <ScrollView>
+       <Login/>
+     </ScrollView>
+   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

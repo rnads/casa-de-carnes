@@ -1,36 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {Button, Pressable, StyleSheet, Text, View } from 'react-native';
 import { AuthLayout } from './layout/AuthLayout';
 import { TextInput } from 'react-native';
+const bcrypt = require('bcryptjs')
+
+
 
 export function Login()
 {
+  const users = require('../../../database/users_table.json');
+  const [password,setPassword] = useState('');
+  const [email,setEmail] = useState();
+
+function authenticate(){
+ 
+  const  result = bcrypt.compareSync(password,users[0].password);
+  console.log(result);
+}
+
   return (
-    <View style={styles.container} >
-      
-      
-      <TextInput
-        style = {styles.input}
-        label={'Usuário'}
-        placeholder={'Digite sua email'}
-      />
-      
-      <TextInput
-        style = {styles.input}
-        secureTextEntry={true}
-        label={'Senha'}
-        placeholder={'Digite sua senha'}
-      />
-      <Pressable style={styles.button} >
-        <Text style={styles.textButton}>Entrar</Text> 
-      </Pressable>
-    </View>
-    // <AuthLayout>
-    //   
-    // </AuthLayout>
-    
+    <AuthLayout>
+      <>
+        <TextInput
+          style = {styles.input}
+          label={'Usuário'}
+          placeholder={'Digite sua email'}
+          value={email} 
+          onChangeText={(text) => setEmail(text)}
+        />
+        <TextInput
+          style = {styles.input}
+          secureTextEntry={true}
+          label={'Senha'}
+          placeholder={'Digite sua senha'}
+          value={password} 
+          onChangeText={(text) => setPassword(text)}
+        />
+        <Pressable style={styles.button} onPress={authenticate}>
+          <Text style={styles.textButton}>Entrar</Text> 
+        </Pressable>
+      </>
+    </AuthLayout>
+ 
   );
 }
+
+
 
 
 const styles = StyleSheet.create({
@@ -46,15 +61,7 @@ const styles = StyleSheet.create({
     fontSize: 16,
     marginBottom: 20
   },
-  container : {
-    backgroundColor: '#fff',
-    width: "100%",
-    height: '100%',
-    display:"flex",
-    justifyContent: 'center',
-    alignItems: "center"
-   
-  },
+  
   button: {
     marginRight: 40,
     alignSelf: "flex-end",

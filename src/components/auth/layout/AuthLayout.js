@@ -6,17 +6,22 @@ export function AuthLayout(props)
 {
   return (
     <View style={styles.container}>
-      {/* {props.children} */}
+      {props.children}
     </View>
   );
 }
 
 const styles =  StyleSheet.create({
-    container : {
-      display: 'flex',
-      backgroundColor: '#5B0000',
-      height: '100vh',
-      justifyContent: 'center',
-      alignItems:'center'
-    }
+  container : {
+    backgroundColor: '#fff',
+    width: "100%",
+    height: '100%',
+    display:"flex",
+    justifyContent: 'center',
+    alignItems: "center"
+   
+  },
   })
+
+
+  

@@ -1,14 +1,12 @@
 import React from 'react';
-import { ScrollView, View } from 'react-native';
+import { ScrollView, View,Text  } from 'react-native';
+import { NativeRouter} from 'react-router-native';
 
-export function Producst(){
+export function Products(){
     return (
-        <ScrollView>
-            <View>
-
-            
-            </View>
-            <Text>Prod</Text>
-        </ScrollView>
+        <View>
+            <Text>Olá Mundo</Text>
+        
+        </View>
     )
 }

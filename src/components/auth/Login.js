@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import {Button, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Pressable, StyleSheet, Text, View } from 'react-native';
 import { AuthLayout } from './layout/AuthLayout';
 import { TextInput } from 'react-native';
 const bcrypt = require('bcryptjs')
 
-
-
-export function Login()
+export function Login({navigation})
 {
   const users = require('../../../database/users_table.json');
   const [password,setPassword] = useState('');
@@ -15,7 +13,11 @@ export function Login()
 function authenticate(){
  
   const  result = bcrypt.compareSync(password,users[0].password);
-  console.log(result);
+  if(result){
+     navigation.navigate('Products');
+  }else{
+    alert('Usuário ou senha incorretos');
+  }
 }
 
   return (
@@ -39,13 +41,13 @@ function authenticate(){
         <Pressable style={styles.button} onPress={authenticate}>
           <Text style={styles.textButton}>Entrar</Text> 
         </Pressable>
+
       </>
     </AuthLayout>
- 
+
   );
+  
 }
-
-
 
 
 const styles = StyleSheet.create({

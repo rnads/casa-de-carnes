@@ -12,7 +12,7 @@ export default function App() {
     const Stack = createNativeStackNavigator();
    return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Login">
+      <Stack.Navigator initialRouteName="Products">
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Products" component={Products} />
         <Stack.Screen name="Product" component={Product} />

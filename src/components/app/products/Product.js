@@ -3,8 +3,9 @@ import { Image, Pressable, StyleSheet, Text, View } from 'react-native';
 const products =  require('../../../../database/products_table.json');
 
 
-export function Product(){
-    const product = products[0];
+export function Product(props){
+    const index = props.navigation.getParam('index');
+    const product = products[index];
     function formatPrice(price){
         return 'R$ ' + price.toFixed(2).replace('.',',')
     }

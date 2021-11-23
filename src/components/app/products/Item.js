@@ -4,6 +4,7 @@ import { Text, View ,Image, StyleSheet} from 'react-native';
 
 
 export function Item(props){
+    
     function formatPrice(price){
         return 'R$ ' + price.toFixed(2).replace('.',',')
     }

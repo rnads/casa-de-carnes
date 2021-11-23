@@ -3,6 +3,7 @@
         "id":1,
         "name": "Picanha Bovina",
         "image": "https://marmoreio.com.br/wp-content/uploads/2020/05/Picanha-Fatiada.jpg",
+        "description": "Picanha Bovina Fazenda Real",
         "price": 50,
         "provider": "Fazenda Real"
     },
@@ -11,6 +12,7 @@
         "id":2,
         "name": "Alcatra Bovina",
         "image": "https://oacougue.com.br/wp-content/uploads/2020/05/O_A%C3%A7ougue-44.jpg",
+        "description": "Alcatra Bovina Fazenda Real",
         "price": 38.46,
         "provider": "Fazenda Real"
     },
@@ -19,6 +21,7 @@
         "id":3,
         "name": "Linguiça Mista",
         "image": "https://fortatacadista.vteximg.com.br/arquivos/ids/161255-1000-1000/LING.MISTA-NOBRE-700G-CONG.---2555131.jpg",
+        "description": "Linguiça Mista Nobre",
         "price": 15.55,
         "provider": "Nobre"
     }

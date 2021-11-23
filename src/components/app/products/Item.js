@@ -3,16 +3,12 @@ import { Text, View ,Image, StyleSheet, Pressable} from 'react-native';
 
 
 
-export function Item(props,){
+export function Item(props){
 
     function formatPrice(price){
         return 'R$ ' + price.toFixed(2).replace('.',',')
     }
-    function openProduct(id){
-        const index = id - 1;
-        props.navigation.navigate('Product',{index});
-
-    }
+   
     return(
         <View style={styles.item} >
             <Image style={styles.logo}   source={{uri:props.product.image}}/>
@@ -20,9 +16,7 @@ export function Item(props,){
                 <Text style={styles.title}>{props.product.name}</Text>
                 <Text>{formatPrice(props.product.price)}</Text>
             </View>
-            <Pressable style={styles.button} onPress={()=>openProduct(props.product.id)}>
-                <Text style={styles.textButton}>Entrar</Text> 
-            </Pressable>
+            
         </View>
     );
 }
